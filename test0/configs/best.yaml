@@ -1,0 +1,18 @@
+experiment: lr0
+split: 0
+seed: 0 # 占位，跑的时候用命令行覆盖
+
+model:
+  n_layers: 3
+  hidden: 491
+  dropout: 0.48360157843494406
+
+train:
+  lr: 0.0013102932098452977
+  weight_decay: 2.334074463261123e-06
+  batch_size: 128
+  epochs: 30
+
+runtime:
+  device: cpu
+  num_threads: 1

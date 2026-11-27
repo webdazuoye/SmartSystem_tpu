@@ -1,6 +1,10 @@
 python train.py --config configs/base.yaml
 python train.py --config configs/base.yaml --seed 1
+
 1..5 | ForEach-Object { python train.py --config configs/base.yaml --seed $_ }
+
+101..105 | ForEach-Object { python train.py --config configs/base.yaml --seed $_ --eval-test; python train.py --config configs/best.yaml --seed $_ --eval-test }
+
 
 Seed 1
 {"val_acc": 0.9472222222222222, "val_loss": 0.20186012983322144}
