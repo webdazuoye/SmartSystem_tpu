@@ -1,9 +1,7 @@
 python train.py --config configs/base.yaml
-python train.py --config configs/base.yaml --seed 1
+python train.py --config configs/base.yaml --seed 0
 
 1..5 | ForEach-Object { python train.py --config configs/base.yaml --seed $_ }
-
-101..105 | ForEach-Object { python train.py --config configs/base.yaml --seed $_ --eval-test; python train.py --config configs/best.yaml --seed $_ --eval-test }
 
 Seed 1
 {"val_acc": 0.9472222222222222, "val_loss": 0.20186012983322144}
@@ -18,7 +16,9 @@ Seed 5
 最小值 (Min): 0.9472 (94.72%)
 最大值 (Max): 0.9528 (95.28%)
 中位数 (Median): 0.9528 (95.28%)
-极差/方差 (Разброс): 0.9528 - 0.9472 = 0.0056 (即 0.56 个百分点 / п.п.)
+方差 (Разброс): 0.9528 - 0.9472 = 0.0056 (即 0.56 个百分点)
+
+101..105 | ForEach-Object { python train.py --config configs/base.yaml --seed $_ --eval-test; python train.py --config configs/best.yaml --seed $_ --eval-test }
 
 --- 计算差值 (Best - Base) ---
 Seed 101: Base=0.9472, Best=0.9722, Delta=+0.0250
